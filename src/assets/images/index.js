@@ -1,3 +1,4 @@
+import logoSvg from './logo.svg';
 import servicesPic1 from './services_pic1.jpg';
 import servicesPic2 from './services_pic2.jpg';
 import servicesPic3 from './services_pic3.jpg';
@@ -8,4 +9,4 @@ import oilPng from './oil.png';
 import cosmeticsPng from './cosmetics.png';
 import toolsPng from './tools.png';
 
-export { servicesPic1, servicesPic2, servicesPic3, tirePng, diskPng, accessoriesPng, oilPng, cosmeticsPng, toolsPng };
+export { logoSvg, servicesPic1, servicesPic2, servicesPic3, tirePng, diskPng, accessoriesPng, oilPng, cosmeticsPng, toolsPng };

@@ -1,3 +1,5 @@
+import './Button.sass';
+
 function Button({ children, onClickAction }) {
     return (
         <button onClick={onClickAction} className="btn">

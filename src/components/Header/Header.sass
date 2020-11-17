@@ -1,0 +1,54 @@
+header
+    position: absolute
+    top: 23px
+    left: 0
+    width: 100%
+    padding-top: 25px
+    padding-bottom: 25px
+
+.header_sticky
+    position: fixed
+    z-index: 99
+    top: 0
+    background-color: #001334
+
+.header_wrapper
+    display: flex
+    flex-wrap: wraps
+    justify-content: space-between
+
+.header_logo-img
+    display: block
+
+nav
+    display: flex
+    flex-wrap: wrap
+    align-items: center
+
+.menu
+    display: flex
+    flex-wrap: wrap
+    list-style-type: none
+    margin: 0
+    padding: 0
+    &_item
+        margin-right: 73px
+        &:last-child
+            margin-right: 0
+    &_link
+        text-decoration: none
+        font-weight: 300
+        font-size: 24px
+        letter-spacing: 0.01em
+        color: #FFFFFF
+        transition: 0.2s all
+        &:hover
+            opacity: 70%
+
+.active
+    font-weight: 600
+
+.user_menu
+    display: flex
+    flex-wrap: wrap
+    align-items: center

@@ -1,6 +1,6 @@
-import vkSvg from '../assets/icons/vk.svg';
-import instagramSvg from '../assets/icons/instagram.svg';
-import facebookSvg from '../assets/icons/facebook.svg';
+import './Footer.sass';
+
+import { vkSvg, instagramSvg, facebookSvg } from '../../assets/icons'
 
 function Footer() {
     return (

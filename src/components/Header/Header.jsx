@@ -1,10 +1,13 @@
 import { useEffect } from 'react';
+import { Link, NavLink } from 'react-router-dom';
 
-import logoSvg from '../assets/images/logo.svg';
+import './Header.sass';
+
+import { logoSvg } from '../../assets/images';
 
 function Header() {
     useEffect(() => {
-        const header = document.querySelector(".header");
+        const header = document.querySelector("header");
         const sticky = header.offsetTop;
         const scrollCallBack = window.addEventListener("scroll", () => {
             if (window.pageYOffset > sticky) {
@@ -15,29 +18,29 @@ function Header() {
         });
         return () => {
             window.removeEventListener("scroll", scrollCallBack);
+            header.classList.remove("header");
         };
     }, []);
 
     return (
         <header>
-        <div className="header">
             <div className="container">
                 <div className="header_wrapper">
                     <div className="header_logo">
-                        <a href="!#" className="header_logo-link">
+                        <Link to="/">
                             <img src={logoSvg} alt="Car repair" className="header_logo-img" />
-                        </a>
+                        </Link>
                     </div>
                     <nav>
                         <ul className="menu">
                             <li className="menu_item">
-                                <a href="!#" className="menu_link active">Главная</a>
+                                <NavLink to="/" className="menu_link" activeClassName="active" exact>Главная</NavLink>
                             </li>
                             <li className="menu_item">
-                                <a href="!#" className="menu_link">Магазин</a>
+                                <NavLink to="/shop" className="menu_link" activeClassName="active">Магазин</NavLink> 
                             </li>
                             <li className="menu_item">
-                                <a href="#services" className="menu_link">Услуги</a>
+                                <a href="/#services" className="menu_link">Услуги</a>
                             </li>
                         </ul>
                     </nav>
@@ -53,7 +56,6 @@ function Header() {
                     </div>
                 </div>
             </div>
-        </div>
         </header>
     );
 }

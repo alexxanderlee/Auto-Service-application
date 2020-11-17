@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 
+import './Carousel.sass';
+
 function Carousel({ items }) {
     useEffect(() => {
         const track = document.querySelector('.carousel_track');
@@ -25,10 +27,10 @@ function Carousel({ items }) {
 
         const checkBtns = () => {
             btnPrev.disabled = position >= 0;
-            btnNext.disabled = position <= -(itemFullWidth * itemsCount);
+            btnNext.disabled = position <= -(itemFullWidth * (itemsCount - itemsToShow));
         };
 
-        const btnNextClick = () => {
+        const handleBtnNextClick = () => {
             const itemsLeft = itemsCount - (Math.abs(position) + itemsToShow * itemFullWidth) / itemFullWidth;
 
             position -= itemsLeft >= itemsToScroll ? diffPosition : itemsLeft * itemFullWidth;
@@ -36,7 +38,7 @@ function Carousel({ items }) {
             checkBtns();
         };
 
-        const btnPrevClick = () => {
+        const handleBtnPrevClick = () => {
             const itemsLeft = Math.abs(position) / itemFullWidth;
 
             position += itemsLeft >= itemsToScroll ? diffPosition : itemsLeft * itemFullWidth;
@@ -44,15 +46,15 @@ function Carousel({ items }) {
             checkBtns();
         };
 
-        btnPrev.addEventListener('click', btnPrevClick);
+        btnPrev.addEventListener('click', handleBtnPrevClick);
 
-        btnNext.addEventListener('click', btnNextClick);
+        btnNext.addEventListener('click', handleBtnNextClick);
 
         checkBtns();
 
         return () => {
-            document.removeEventListener('click', btnPrevClick);
-            document.removeEventListener('click', btnNextClick);
+            btnPrev.removeEventListener('click', handleBtnPrevClick);
+            btnNext.removeEventListener('click', handleBtnNextClick);
         };
     }, []);
 
