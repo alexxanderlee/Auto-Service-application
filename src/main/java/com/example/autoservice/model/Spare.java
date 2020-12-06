@@ -22,6 +22,9 @@ public class Spare {
 
     private String type;
 
+    @Column(name = "img_ref")
+    private String imgRef;
+
     @ManyToOne(fetch = FetchType.LAZY)
     private Car car;
 
