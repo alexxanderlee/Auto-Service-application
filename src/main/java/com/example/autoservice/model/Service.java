@@ -5,6 +5,7 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.List;
 
 @Data
 @DynamicUpdate
@@ -17,4 +18,8 @@ public class Service {
     private String name;
 
     private BigDecimal price;
+
+    @OneToMany(mappedBy = "service",
+               fetch = FetchType.LAZY)
+    private List<Purchase> purchases;
 }

@@ -4,6 +4,7 @@ import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @DynamicUpdate
@@ -22,4 +23,12 @@ public class Client {
     private String email;
 
     private Short pswd;
+
+    @OneToMany(mappedBy = "client",
+               fetch = FetchType.LAZY)
+    private List<Order> orders;
+
+    @OneToMany(mappedBy = "client",
+               fetch = FetchType.LAZY)
+    private List<Purchase> purchases;
 }

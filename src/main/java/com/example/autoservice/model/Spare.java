@@ -6,6 +6,7 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.List;
 
 @Data
 @EqualsAndHashCode(of = {"id"})
@@ -21,4 +22,14 @@ public class Spare {
     private BigDecimal price;
 
     private String type;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Car car;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Producer producer;
+
+    @OneToMany(fetch = FetchType.LAZY,
+               mappedBy = "spare")
+    private List<Order> orders;
 }

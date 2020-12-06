@@ -4,6 +4,7 @@ import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @DynamicUpdate
@@ -18,4 +19,8 @@ public class Producer {
     private String address;
 
     private String phone;
+
+    @OneToMany(mappedBy = "producer",
+               fetch = FetchType.LAZY)
+    private List<Spare> spares;
 }

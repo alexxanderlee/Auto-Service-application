@@ -24,4 +24,10 @@ public class Order {
 
     @Column(name = "employee_id")
     private String employeeId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Spare spare;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private Client client;
 }

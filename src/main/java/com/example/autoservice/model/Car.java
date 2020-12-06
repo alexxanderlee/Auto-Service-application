@@ -4,6 +4,7 @@ import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @DynamicUpdate
@@ -19,4 +20,8 @@ public class Car {
 
     @Column(name = "issue_year")
     private Short issueYear;
+
+    @OneToMany(mappedBy = "car",
+               fetch = FetchType.LAZY)
+    private List<Spare> spares;
 }
