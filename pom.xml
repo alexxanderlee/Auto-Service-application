@@ -34,6 +34,8 @@
             <artifactId>hibernate-entitymanager</artifactId>
             <version>6.0.0.Alpha6</version>
         </dependency>
+
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
