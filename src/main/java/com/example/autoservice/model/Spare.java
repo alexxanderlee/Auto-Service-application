@@ -1,7 +1,7 @@
 package com.example.autoservice.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
@@ -9,6 +9,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Data
+@AllArgsConstructor
 @DynamicUpdate
 @Table(name = "spares")
 public class Spare {

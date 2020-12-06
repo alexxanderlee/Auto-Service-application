@@ -1,5 +1,6 @@
 package com.example.autoservice.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -7,6 +8,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Data
+@AllArgsConstructor
 @DynamicUpdate
 @Table(name = "clients")
 public class Client {

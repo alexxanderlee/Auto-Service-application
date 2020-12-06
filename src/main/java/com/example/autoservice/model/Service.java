@@ -1,5 +1,6 @@
 package com.example.autoservice.model;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.hibernate.annotations.DynamicUpdate;
 
@@ -8,6 +9,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Data
+@AllArgsConstructor
 @DynamicUpdate
 @Table(name = "services")
 public class Service {
