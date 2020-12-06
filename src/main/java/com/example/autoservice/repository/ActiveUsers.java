@@ -16,7 +16,7 @@ public class ActiveUsers {
 
     public static ActiveUsers getActiveUsersInstance() {
         if (activeUsers == null) {
-            return new ActiveUsers();
+            activeUsers = new ActiveUsers();
         }
         return activeUsers;
     }
