@@ -9,13 +9,12 @@ import java.math.BigDecimal;
 import java.util.List;
 
 @Data
-@EqualsAndHashCode(of = {"id"})
 @DynamicUpdate
 @Table(name = "spares")
 public class Spare {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     private String title;
 
