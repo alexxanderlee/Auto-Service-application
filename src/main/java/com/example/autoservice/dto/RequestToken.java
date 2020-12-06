@@ -1,4 +1,4 @@
-package com.example.autoservice.requestmodel;
+package com.example.autoservice.dto;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;

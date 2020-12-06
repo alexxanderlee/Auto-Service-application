@@ -8,7 +8,7 @@ import java.util.UUID;
 
 public class ActiveUsers {
     private static ActiveUsers activeUsers;
-    private Map<String, Client> authorizedUsers;
+    private Map<String, Client> authorizedUsers;//токен, клиент
 
     private ActiveUsers() {
         authorizedUsers = new HashMap<>();
@@ -25,6 +25,10 @@ public class ActiveUsers {
         String token = UUID.randomUUID().toString();
         authorizedUsers.put(token, client);
         return token;
+    }
+
+    public Client getUser(String token) {
+        return authorizedUsers.get(token);
     }
 
     public void removeUser(String token) {
