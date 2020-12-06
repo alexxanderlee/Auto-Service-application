@@ -12,7 +12,7 @@ import java.util.List;
 public class Producer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     private String title;
 
