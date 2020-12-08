@@ -1,16 +1,15 @@
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 
 import './Products.sass';
 
 function Products({ match }) {
     const { categoryId } = match.params;
-    
-    const products = useSelector(({ products }) =>
-        products.filter(product => Number(product.categoryId) === Number(categoryId))
-    );
-    console.log(products)
 
+    const products = useSelector((state) =>
+        state.products.items.filter(product => Number(product.categoryId) === Number(categoryId))
+    );
+    
     return (
         <div className="products">
             {products && products.map(({ id, name, price, img }) => {

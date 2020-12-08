@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import './Categories.sass';
 
 function Categories() {
-    const categories = useSelector(({ categories }) => categories);
+    const categories = useSelector((state) => state.categories.items);
 
     return (
         <div className="categories">

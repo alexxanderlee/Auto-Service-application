@@ -1,26 +1,27 @@
 import { useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { Redirect, Route, Switch } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 import './app.sass';
 
 import { Home, Shop, Services, LogIn, SignIn, NoMatchPage } from './pages';
 import { Header, Footer } from './components';
-import { setCategories } from './redux/actions/categories';
-import { setProducts } from './redux/actions/products';
-
+import { fetchProducts } from './redux/actions/products';
+import { fetchCategories } from './redux/actions/categories';
 
 function App() {
     const dispatch = useDispatch();
+    const categoriesIsLoaded = useSelector((state) => state.categories.isLoaded);
+    const productsIsLoaded = useSelector((state) => state.products.isLoaded);
 
     useEffect(() => {
-        fetch('http://localhost:3000/db.json')
-            .then((respose) => respose.json())
-            .then(data => {
-                dispatch(setCategories(data.categories));
-                dispatch(setProducts(data.products));
-            });
-    }, [dispatch]);
+        if (!categoriesIsLoaded) {
+            dispatch(fetchCategories());
+        }
+        if (!productsIsLoaded) {
+            dispatch(fetchProducts());
+        }
+    }, [categoriesIsLoaded, productsIsLoaded, dispatch]);
 
     return (
         <div className="app">
@@ -31,7 +32,7 @@ function App() {
                     <Route path="/services" component={Services} exact />
                     <Route path="/login" component={LogIn} exact />
                     <Route path="/signin" component={SignIn} exact />
-                    <Route component={NoMatchPage} />
+                    <Redirect to="/" />
                 </Switch>
             <Footer />
         </div>
