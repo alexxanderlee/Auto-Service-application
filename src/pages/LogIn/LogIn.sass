@@ -1,0 +1,57 @@
+.form
+    margin: 100px 0
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+
+.form
+    &_group
+        margin-bottom: 100px
+        position: relative
+        width: 100%
+    &_label
+        position: absolute
+        top: 10px
+        left: 0
+        //z-index: -1
+        font-weight: 700
+        font-size: 24px
+        line-height: 29px
+        letter-spacing: 0.01em
+        color: rgba(0, 19, 52, 0.3)
+        transition: 0.3s
+    &_input
+        width: 100%
+        padding: 10px 0
+        font-weight: 600
+        font-size: 28px
+        line-height: 32px
+        letter-spacing: 0.01em
+        color: #001334
+        border: none
+        border-bottom: 3px solid #4C6EA7
+        background-color: transparent
+        outline: none
+        transition: 0.3s
+        &:focus ~ .form_label
+            top: -25px
+            font-size: 18px
+            color: rgba(0, 19, 52, 0.25)
+        &:not(:placeholder-shown) ~ .form_label
+            top: -25px
+            font-size: 19px
+            color: rgba(0, 19, 52, 0.25)
+
+.bottom
+    &_text
+        margin-right: 5px
+        font-weight: 300
+        font-size: 24px
+        line-height: 29px
+        color: #001334
+    &_link
+        font-weight: 300
+        font-size: 24px
+        line-height: 29px
+        color: #003082

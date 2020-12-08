@@ -40,14 +40,14 @@ function Header() {
                                 <NavLink to="/shop" className="menu_link" activeClassName="active">Магазин</NavLink> 
                             </li>
                             <li className="menu_item">
-                                <a href="/#services" className="menu_link">Услуги</a>
+                                <NavLink to="/services" className="menu_link" activeClassName="active">Услуги</NavLink>
                             </li>
                         </ul>
                     </nav>
                     <div className="user_menu">
                         <ul className="menu">
                             <li className="menu_item">
-                                <a href="!#" className="menu_link">Вход</a>
+                                <NavLink to="/login" className="menu_link" activeClassName="active">Вход</NavLink>
                             </li>
                             <li className="menu_item">
                                 <a href="!#" className="menu_link">Корзина</a>

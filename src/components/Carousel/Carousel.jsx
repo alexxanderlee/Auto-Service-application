@@ -1,4 +1,5 @@
 import { useEffect } from "react";
+import { Link } from 'react-router-dom';
 
 import './Carousel.sass';
 
@@ -64,11 +65,11 @@ function Carousel({ items }) {
             <div className="carousel_wrapper">
                 <div className="carousel_track">
                     {items.map(({ id, img, alt, title, text}) => 
-                        <div key={id} className="carousel_item">
+                        <Link key={id} className="carousel_item" to={'/shop/categories/' + id}>
                             <img src={img} alt={alt} className="carousel_item-img" />
                             <div className="carousel_item-title">{title}</div>
                             <div className="carousel_item-text">{text}</div>
-                        </div>
+                        </Link>
                     )}
                 </div>
             </div>
