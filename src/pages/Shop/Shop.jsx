@@ -1,10 +1,10 @@
-import { Route } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import './Shop.sass';
 
 import { Search, Categories, Products, Product } from '../../components';
 
-function Shop({ match }) {
+function Shop() {
     return (
         <div className="content">
             <div className="header_bg"></div>
@@ -12,9 +12,12 @@ function Shop({ match }) {
                 <div className="container">
                     <h2 className="title">Каталог автозапчастей</h2>
                     <Search />
-                    <Route path={`${match.url}`} component={Categories} exact />
-                    <Route path={`${match.url}/categories/:categoryId`} component={Products} exact/>
-                    <Route path={`${match.url}/products/:productId`} component={Product} exact />
+                    <Switch>
+                        <Route path="/shop" component={Categories} exact />
+                        <Route path="/shop/categories/:categoryId" component={Products} exact/>
+                        <Route path="/shop/categories/:categoryId/products/:productId" component={Product} exact />
+                        <Redirect to="/" />
+                    </Switch>
                 </div>
             </div>
         </div>

@@ -11,7 +11,7 @@ function Categories() {
             {categories && categories.map(({ id, img, name, descr, url }) => {
                 return (
                     <Link key={id} className="categories_item" to={'/shop/categories/' + id}>
-                        <img src={process.env.PUBLIC_URL + '/images/' + img} alt="pic" className="categories_item-img" />
+                        <img src={process.env.PUBLIC_URL + img} alt="pic" className="categories_item-img" />
                         <div className="categories_item-title">{name}</div>
                         <div className="categories_item-text">{descr}</div>
                     </Link>

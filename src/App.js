@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import './app.sass';
 
-import { Home, Shop, Services, LogIn, SignIn, NoMatchPage } from './pages';
+import { Home, Cart, Shop, Services, LogIn, SignIn } from './pages';
 import { Header, Footer } from './components';
 import { fetchProducts } from './redux/actions/products';
 import { fetchCategories } from './redux/actions/categories';
@@ -32,6 +32,7 @@ function App() {
                     <Route path="/services" component={Services} exact />
                     <Route path="/login" component={LogIn} exact />
                     <Route path="/signin" component={SignIn} exact />
+                    <Route path="/cart" component={Cart} />
                     <Redirect to="/" />
                 </Switch>
             <Footer />

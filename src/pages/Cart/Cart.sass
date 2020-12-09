@@ -1,0 +1,158 @@
+.cart
+    &_bg
+        padding: 100px 0
+        background: linear-gradient(125.27deg, rgba(190, 212, 250, 0.466146) 11.84%, rgba(181, 201, 235, 0.5) 84.09%)
+    &_wrapper
+        width: 970px
+        margin: 0 auto
+        padding: 67px 70px
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        background-color: #FFFFFF
+        box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25)
+        border-radius: 30px 
+    &_title
+        font-weight: 800
+        font-size: 42px
+        line-height: 51px
+        text-transform: capitalize
+        color: #001334
+        text-align: center
+    &_divider
+        height: 1px
+        width: 830px
+        margin-top: 50px
+        background-color: #B5C9EB
+    &_item
+        width: 100%
+        margin-top: 114px
+        &-wrapper
+            width: 100%
+            display: flex
+            flex-wrap: wrap
+            justify-content: space-between
+        &-data
+            width: 590px
+            &-block1
+                position: relative
+                display: flex
+                flex-wrap: wrap
+                justify-content: space-between
+                align-items: center
+            &-block2
+                margin-top: 35px
+                display: flex
+                flex-wrap: wrap
+                justify-content: space-between
+                align-items: center
+        &-name
+            width: 480px
+            font-weight: 600
+            font-size: 24px
+            line-height: 29px
+            letter-spacing: 0.01em
+            color: #001334
+        &-remove
+            position: absolute
+            right: 0
+            width: 29px
+            height: 29px
+            cursor: pointer
+            opacity: 1
+            transition: 0.2s
+            &:hover
+                opacity: 0.6
+            &::before
+                position: absolute
+                left: 12px
+                content: ''
+                height: 28px
+                width: 1px
+                background-color: #001334
+                transform: rotate(45deg)
+            &::after
+                position: absolute
+                left: 12px
+                content: ''
+                height: 28px
+                width: 1px
+                background-color: #001334
+                transform: rotate(-45deg)
+        &-amount
+            display: flex
+            justify-content: flex-start
+            align-items: center
+        &-count
+            margin-right: 12px
+            width: 138px
+            height: 32px
+            top: 47px
+            border: 1px solid #001334
+            border-radius: 10px
+            display: flex
+            justify-content: space-around
+            &-minus
+                position: relative
+                width: 32px
+                height: 32px
+                cursor: pointer
+                opacity: 1
+                transition: 0.2s
+                &:hover
+                    opacity: 0.6
+                &::after
+                    position: absolute
+                    left: 8px
+                    top: 14px
+                    content: ''
+                    width: 15px
+                    height: 2px
+                    background-color: #001334
+            &-number
+                font-weight: 600
+                font-size: 24px
+                line-height: 29px
+                letter-spacing: 0.01em
+                color: #001334
+                transform: translateY(-1px)
+            &-plus
+                position: relative
+                width: 32px
+                height: 32px
+                cursor: pointer
+                opacity: 1
+                transition: 0.2s
+                &:hover
+                    opacity: 0.6
+                &::after
+                    position: absolute
+                    left: 8px
+                    top: 14px
+                    content: ''
+                    width: 17px
+                    height: 2px
+                    background-color: #001334
+                &::before
+                    position: absolute
+                    left: 9px
+                    top: 14px
+                    content: ''
+                    width: 15px
+                    height: 2px
+                    background-color: #001334
+                    transform: rotate(90deg)
+        &-price
+            font-weight: 600
+            font-size: 22px
+            line-height: 27px
+            letter-spacing: 0.03em
+            color: #5774a8
+        &-fullprice
+            font-weight: 800
+            font-size: 22px
+            line-height: 27px
+            letter-spacing: 0.01em
+            color: #001334
+    &_btn_div
+        margin-top: 100px

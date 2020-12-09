@@ -1,53 +1,11 @@
+import { Link } from 'react-router-dom';
+
 import './Home.sass';
 
 import { Button, Carousel } from '../../components';
-import { servicesPic1, servicesPic2, servicesPic3, tirePng, diskPng, accessoriesPng, oilPng, cosmeticsPng, toolsPng } from '../../assets/images';
+import { servicesPic1, servicesPic2, servicesPic3 } from '../../assets/images';
 import { qualitySvg, safetySvg, moneySvg } from '../../assets/icons';
 
-const items = [
-    {
-        id: 1,
-        img: tirePng,
-        alt: '',
-        title: 'Шины',
-        text: 'Ключевой элемент, гарантирующий безопасность и комфорт езды.'
-    },
-    {
-        id: 2,
-        img: diskPng,
-        alt: '',
-        title: 'Диски',
-        text: 'Литые и  кованные диски, а также штамповки.'
-    },
-    {
-        id: 3,
-        img: oilPng,
-        alt: '',
-        title: 'Масла',
-        text: 'Моторное и трансмиссное масла, а также технические жидкости.'
-    },
-    {
-        id: 4,
-        img: cosmeticsPng,
-        alt: '',
-        title: 'Автохимия и косметика',
-        text: 'Для ремонта, для салона, для кузова и стекол.'
-    },
-    {
-        id: 5,
-        img: accessoriesPng,
-        alt: '',
-        title: 'Принадлежности для автомобиля',
-        text: 'Автолампы, подшипники, ремни и многое другое.'
-    },
-    {
-        id: 6,
-        img: toolsPng,
-        alt: '',
-        title: 'Инструменты',
-        text: 'Оборудование для автосервиса и гаража.'
-    }
-];
 
 function Home() {
     return (
@@ -100,7 +58,7 @@ function Home() {
             <section className="catalog">
                 <div className="container">
                     <h2 className="title">Каталог автозапчастей</h2>
-                    <Carousel items={items}/>
+                    <Carousel/>
                 </div>
             </section>
 
@@ -140,7 +98,7 @@ function Home() {
             <section className="order">
                 <h2 className="order_title">Заказать диагностику</h2>
                 <div className="order_text">Выберите удобное вам время и зарезервируйте место в нашем автосервисе</div>
-                <Button onClickAction={() => alert('Клик!')}>Заказать</Button>
+                <Link to="/services"><Button>Заказать</Button></Link>
             </section>
 
             <section className="contacts">

@@ -50,7 +50,7 @@ function Header() {
                                 <NavLink to="/login" className="menu_link" activeClassName="active">Вход</NavLink>
                             </li>
                             <li className="menu_item">
-                                <a href="!#" className="menu_link">Корзина</a>
+                                <NavLink to="/cart" className="menu_link">Корзина</NavLink>
                             </li>
                         </ul>
                     </div>

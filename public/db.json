@@ -2,42 +2,42 @@
     "categories": [
         {
             "id": 1,
-            "img": "tire.png",
+            "img": "/images/tire.png",
             "name": "Шины",
             "descr": "Ключевой элемент, гарантирующий безопасность и комфорт езды.",
             "url": "tires"
         },
         {
             "id": 2,
-            "img": "disk.png",
+            "img": "/images/disk.png",
             "name": "Диски",
             "descr": "Литые и  кованные диски, а также штамповки.",
             "url": "disks"
         },
         {
             "id": 3,
-            "img": "oil.png",
+            "img": "/images/oil.png",
             "name": "Масла",
             "descr": "Моторное и трансмиссное масла, а также технические жидкости.",
             "url": "oil"
         },
         {
             "id": 4,
-            "img": "cosmetics.png",
+            "img": "/images/cosmetics.png",
             "name": "Автохимия и косметика",
             "descr": "Для ремонта, для салона, для кузова и стекол.",
             "url": "cosmetics"
         },
         {
             "id": 5,
-            "img": "accessories.png",
+            "img": "/images/accessories.png",
             "name": "Принадлежности для автомобиля",
             "descr": "Автолампы, подшипники, ремни и многое другое.",
             "url": "accessories"
         },
         {
             "id": 6,
-            "img": "tools.png",
+            "img": "/images/tools.png",
             "name": "Инструменты",
             "descr": "Оборудование для автосервиса и гаража.",
             "url": "tools"
@@ -51,7 +51,7 @@
             "name": "NOKIAN TS31907 Шина зимняя Nordman 5",
             "manufacturer": "NOKIAN",
             "price": 2920,
-            "img": "tire.png"
+            "img": "/images/tire.png"
         },
         {
             "id": 2,
@@ -60,7 +60,7 @@
             "name": "NOKIAN JK23412 Шина зимняя Nordman 9",
             "manufacturer": "NOKIAN",
             "price": 3020,
-            "img": "tire.png"
+            "img": "/images/tire.png"
         },
         {
             "id": 3,
@@ -69,7 +69,7 @@
             "name": "Колесный диск ALCASTA 16 Литой",
             "manufacturer": "ALCASTA",
             "price": 4010,
-            "img": "disk.png"
+            "img": "/images/disk.png"
         },
         {
             "id": 4,
@@ -78,7 +78,7 @@
             "name": "Колесный диск Megami MGM-7 тёмно-серый",
             "manufacturer": "Megami",
             "price": 2970,
-            "img": "disk.png"
+            "img": "/images/disk.png"
         },
         {
             "id": 5,
@@ -87,7 +87,7 @@
             "name": "Моторное масло Shell HELIX Синтетическое 4 л",
             "manufacturer": "Shell HELIX",
             "price": 1690,
-            "img": "oil.png"
+            "img": "/images/oil.png"
         },
         {
             "id": 6,
@@ -96,7 +96,7 @@
             "name": "Моторное масло Mitsubishi ENGINE Синтетическое 4 л",
             "manufacturer": "Mitsubishi",
             "price": 2420,
-            "img": "oil.png"
+            "img": "/images/oil.png"
         },
         {
             "id": 7,
@@ -105,7 +105,7 @@
             "name": "Активная пена Grass Active Foam Pink 6 кг",
             "manufacturer": "Grass",
             "price": 900,
-            "img": "cosmetics.png"
+            "img": "/images/cosmetics.png"
         },
         {
             "id": 8,
@@ -114,7 +114,7 @@
             "name": "Очиститель дисков IR 'Iron', 500мл",
             "manufacturer": "Iron",
             "price": 590,
-            "img": "cosmetics.png"
+            "img": "/images/cosmetics.png"
         },
         {
             "id": 9,
@@ -123,7 +123,7 @@
             "name": "Автолампа OSRAM NIGHT BREAKER LASER",
             "manufacturer": "OSRAM",
             "price": 2080,
-            "img": "accessories.png"
+            "img": "/images/accessories.png"
         },
         {
             "id": 10,
@@ -132,7 +132,7 @@
             "name": "BOSCH Лампа H7 12V 55W pure light",
             "manufacturer": "BOSCH",
             "price": 345,
-            "img": "accessories.png"
+            "img": "/images/accessories.png"
         },
         {
             "id": 11,
@@ -141,7 +141,7 @@
             "name": "Набор инструмента OMBRA 82 предмета",
             "manufacturer": "OMBRA",
             "price": 6790,
-            "img": "tools.png"
+            "img": "/images/tools.png"
         }
     ]
 }
