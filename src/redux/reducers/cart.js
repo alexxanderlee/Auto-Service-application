@@ -37,7 +37,7 @@ const cart = (state = initialState, action) => {
                 totalCount: newTotalCount
             };
         }
-// требует проверки
+
         case 'REMOVE_PRODUCT_FROM_CART': {
             const newItems = { ...state.items };
             const id = action.payload;
@@ -53,10 +53,14 @@ const cart = (state = initialState, action) => {
                 totalCount: state.totalCount - productCount
             };
         }
-// требует проверки
+
         case 'DECREASE_PRODUCT': {
-            const newItems = { ...state.items };
             const id = action.payload;
+            if (state.items[id].count === 1) {
+                return state;
+            }
+
+            const newItems = { ...state.items };
             const productPrice = newItems[id].obj.price;
 
             newItems[id].count -= 1;
@@ -69,10 +73,14 @@ const cart = (state = initialState, action) => {
                 totalPrice: state.totalPrice - productPrice
             };
         }
-// требует проверки
+
         case 'INCREASE_PRODUCT': {
-            const newItems = { ...state.items };
             const id = action.payload;
+            if (state.items[id].count === 40) {
+                return state;
+            }
+
+            const newItems = { ...state.items };
             const productPrice = newItems[id].obj.price;
 
             newItems[id].count += 1;

@@ -22,7 +22,7 @@ function Product({ match }) {
         if (product) {
             const addProduct = () => {
                 dispatch(addProductToCart(product));
-                alert('Товар добавлен!');
+                alert('Товар добавлен в корзину!');
             };
             const { img, name, type, price, manufacturer } = product;
             content = (

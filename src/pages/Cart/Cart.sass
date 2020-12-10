@@ -13,6 +13,7 @@
         box-shadow: 0px 4px 2px rgba(0, 0, 0, 0.25)
         border-radius: 30px 
     &_title
+        margin-bottom: 60px
         font-weight: 800
         font-size: 42px
         line-height: 51px
@@ -26,12 +27,14 @@
         background-color: #B5C9EB
     &_item
         width: 100%
-        margin-top: 114px
+        margin-top: 50px
         &-wrapper
             width: 100%
             display: flex
             flex-wrap: wrap
             justify-content: space-between
+        &-img
+            max-width: 215px
         &-data
             width: 590px
             &-block1
@@ -98,8 +101,7 @@
                 height: 32px
                 cursor: pointer
                 opacity: 1
-                transition: 0.2s
-                &:hover
+                &:active
                     opacity: 0.6
                 &::after
                     position: absolute
@@ -122,8 +124,7 @@
                 height: 32px
                 cursor: pointer
                 opacity: 1
-                transition: 0.2s
-                &:hover
+                &:active
                     opacity: 0.6
                 &::after
                     position: absolute
@@ -156,3 +157,36 @@
             color: #001334
     &_btn_div
         margin-top: 100px
+    &_footer
+        width: 100%
+        &-string
+            display: flex
+            justify-content: space-between
+        &-label
+            margin-top: 50px
+            display: inline-block
+            font-weight: 800
+            font-size: 24px
+            line-height: 29px
+            letter-spacing: 0.01em
+            color: #001334
+        &-value
+            margin-top: 50px
+            display: inline-block
+            font-weight: 400
+            font-size: 24px
+            line-height: 29px
+            letter-spacing: 0.01em
+            color: #001334
+    &_empty
+        &_text
+            margin-bottom: 60px
+            max-width: 780px
+            font-weight: 400
+            font-size: 36px
+            line-height: 44px
+            text-align: center
+            letter-spacing: 0.01em
+            color: #001334
+        &_image
+            margin-bottom: 60px

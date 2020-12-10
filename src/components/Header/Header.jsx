@@ -1,11 +1,15 @@
 import { useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 import './Header.sass';
 
 import { logoSvg } from '../../assets/images';
 
 function Header() {
+    const items = useSelector((state) => state.cart.items);
+    const countOfProducts = Object.keys(items).length;
+
     useEffect(() => {
         const header = document.querySelector("header");
         const sticky = header.offsetTop;
@@ -50,7 +54,7 @@ function Header() {
                                 <NavLink to="/login" className="menu_link" activeClassName="active">Вход</NavLink>
                             </li>
                             <li className="menu_item">
-                                <NavLink to="/cart" className="menu_link">Корзина</NavLink>
+                                <NavLink to="/cart" className="menu_link">Корзина ({countOfProducts})</NavLink>
                             </li>
                         </ul>
                     </div>
