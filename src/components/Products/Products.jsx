@@ -3,13 +3,22 @@ import { useSelector } from 'react-redux';
 
 import './Products.sass';
 
+
 function Products({ match }) {
     const { categoryId } = match.params;
 
     const products = useSelector((state) =>
-        state.products.items.filter(product => Number(product.categoryId) === Number(categoryId))
+        (categoryId != null)?
+            state.products.items.filter(product => Number(product.categoryId) === Number(categoryId)):
+            state.products.items
     );
-    
+
+
+
+
+    //живой поиск
+
+
     return (
         <div className="products">
             {products && products.map(({ id, categoryId, name, price, img }) => {
