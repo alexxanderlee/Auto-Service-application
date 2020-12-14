@@ -9,10 +9,12 @@ import { Header, Footer } from './components';
 import { fetchProducts } from './redux/actions/products';
 import { fetchCategories } from './redux/actions/categories';
 
+
 function App() {
     const dispatch = useDispatch();
     const categoriesIsLoaded = useSelector((state) => state.categories.isLoaded);
     const productsIsLoaded = useSelector((state) => state.products.isLoaded);
+
 
     useEffect(() => {
         if (!categoriesIsLoaded) {

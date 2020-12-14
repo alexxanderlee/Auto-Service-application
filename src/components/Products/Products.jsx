@@ -1,22 +1,21 @@
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 
+import React from 'react';
 import './Products.sass';
-
-
-function Products({ match }) {
-    const { categoryId } = match.params;
-
-    const products = useSelector((state) =>
-        (categoryId != null)?
-            state.products.items.filter(product => Number(product.categoryId) === Number(categoryId)):
-            state.products.items
-    );
+import {connect} from "react-redux";
+import {withRouter} from "react-router";
 
 
 
+function Products(props){
 
-    //живой поиск
+    const {categoryId} = props.match.params;
+
+    const products =
+        (categoryId!=null)?
+        props.products.filter(product => Number(product.categoryId) === Number(categoryId)):
+        props.products
+
 
 
     return (
@@ -32,6 +31,16 @@ function Products({ match }) {
             })}
         </div>
     );
+
+
 }
 
-export default Products;
+
+let urlData = withRouter(Products);
+export default connect(
+    state => ({
+        products :  state.products.items.filter(product => product.name.toLowerCase().includes(state.filterProducts.toLowerCase()))
+
+    }),
+    urlData
+)(Products);

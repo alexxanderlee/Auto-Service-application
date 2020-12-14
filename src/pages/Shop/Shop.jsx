@@ -7,6 +7,7 @@ import { Search, Categories, Products, Product } from '../../components';
 function Shop() {
 
     return (
+
         <div className="content">
             <div className="header_bg"></div>
             <div className="shop_bg">
