@@ -1,15 +1,23 @@
 import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 
+import React from 'react';
 import './Products.sass';
+import {connect} from "react-redux";
+import {withRouter} from "react-router";
 
-function Products({ match }) {
-    const { categoryId } = match.params;
 
-    const products = useSelector((state) =>
-        state.products.items.filter(product => Number(product.categoryId) === Number(categoryId))
-    );
-    
+
+function Products(props){
+
+    const {categoryId} = props.match.params;
+
+    const products =
+        (categoryId!=null)?
+        props.products.filter(product => Number(product.categoryId) === Number(categoryId)):
+        props.products
+
+
+
     return (
         <div className="products">
             {products && products.map(({ id, categoryId, name, price, img }) => {
@@ -23,6 +31,16 @@ function Products({ match }) {
             })}
         </div>
     );
+
+
 }
 
-export default Products;
+
+let urlData = withRouter(Products);
+export default connect(
+    state => ({
+        products :  state.products.items.filter(product => product.name.toLowerCase().includes(state.filterProducts.toLowerCase()))
+
+    }),
+    urlData
+)(Products);
