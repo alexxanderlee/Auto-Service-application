@@ -1,8 +1,8 @@
 import './Button.sass';
 
-function Button({ children, onClickAction }) {
+function Button({ children, onClickAction, type = 'button' }) {
     return (
-        <button onClick={onClickAction} className="btn">
+        <button onClick={onClickAction} type={type} className="btn">
             <span className="btn_text">{children}</span>
         </button>
     );

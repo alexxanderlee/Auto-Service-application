@@ -9,5 +9,6 @@ import oilPng from './oil.png';
 import cosmeticsPng from './cosmetics.png';
 import toolsPng from './tools.png';
 import emptyCart from './empty_cart.png';
+import profilePng from './profile.png';
 
-export { logoSvg, servicesPic1, servicesPic2, servicesPic3, tirePng, diskPng, accessoriesPng, oilPng, cosmeticsPng, toolsPng, emptyCart };
+export { logoSvg, servicesPic1, servicesPic2, servicesPic3, tirePng, diskPng, accessoriesPng, oilPng, cosmeticsPng, toolsPng, emptyCart, profilePng };

@@ -15,7 +15,7 @@ function Home() {
                     <div className="promo_wrapper">
                         <h1 className="promo_title">За рулем с удовольствием</h1>
                         <div className="promo_text">Заказ услуг автосервиса и запчастей для ваших автомобилей в один клик!</div>
-                        <Button onClickAction={() => alert('Клац!')}>Попробовать</Button>
+                        <Link to="/services"><Button>Попробовать</Button></Link>
                     </div>
                 </div>
             </div>

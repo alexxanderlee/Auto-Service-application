@@ -7,8 +7,10 @@ import './Header.sass';
 import { logoSvg } from '../../assets/images';
 
 function Header() {
-    const items = useSelector((state) => state.cart.items);
+    const state = useSelector((state) => state);
+    const items = state.cart.items;
     const countOfProducts = Object.keys(items).length;
+    const isLoggedIn = state.user.loggedIn;
 
     useEffect(() => {
         const header = document.querySelector("header");
@@ -51,7 +53,9 @@ function Header() {
                     <div className="user_menu">
                         <ul className="menu">
                             <li className="menu_item">
-                                <NavLink to="/login" className="menu_link" activeClassName="active">Вход</NavLink>
+                                {isLoggedIn
+                                    ? <NavLink to="/profile" className="menu_link" activeClassName="active">Профиль</NavLink>
+                                    : <NavLink to="/login" className="menu_link" activeClassName="active">Вход</NavLink>}
                             </li>
                             <li className="menu_item">
                                 <NavLink to="/cart" className="menu_link">Корзина ({countOfProducts})</NavLink>

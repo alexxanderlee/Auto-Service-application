@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import './Cart.sass';
 
@@ -7,8 +7,7 @@ import { Button } from '../../components';
 import { removeProductFromCart, decreaseProduct, increaseProduct } from '../../redux/actions/cart';
 import { emptyCart } from '../../assets/images';
 
-function Cart() {
-    const dispatch = useDispatch();
+function Cart({ dispatch }) {
     const items = useSelector((state) => state.cart.items);
     const totalCount = useSelector((state) => state.cart.totalCount);
     const totalPrice = useSelector((state) => state.cart.totalPrice);

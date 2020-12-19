@@ -32,7 +32,7 @@ function Services() {
                                 <input type="time" name="time" className="services_form_field" />
                             </div>
                         </form>
-                        <Button onClickAction={() => alert('Push!')}>Отправить</Button>
+                        <Button>Отправить</Button>
                     </div>
                 </div>
             </div>

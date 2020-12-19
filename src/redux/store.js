@@ -5,21 +5,22 @@ import rootReducer from './reducers';
 
 function saveToLocalStorage(state) {
     try {
-    const serialisedState = JSON.stringify(state);
-    localStorage.setItem("persistantState", serialisedState);
+        const cartState = { cart: state.cart };
+        const serialisedState = JSON.stringify(cartState);
+        localStorage.setItem("cartState", serialisedState);
     } catch (e) {
-    console.warn(e);
+        console.warn(e);
     }
 }
 
 function loadFromLocalStorage() {
     try {
-    const serialisedState = localStorage.getItem("persistantState");
-    if (serialisedState === null) return undefined;
-    return JSON.parse(serialisedState);
+        const serialisedState = localStorage.getItem("cartState");
+        if (serialisedState === null) return undefined;
+        return JSON.parse(serialisedState);
     } catch (e) {
-    console.warn(e);
-    return undefined;
+        console.warn(e);
+        return undefined;
     }
 }
 
