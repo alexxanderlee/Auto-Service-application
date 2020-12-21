@@ -17,7 +17,6 @@ class Search extends Component {
     }
 
     render(){
-        console.log(this.props.products)
         return (
             <form className="search">
                 <Link className="search_item" to={'/shop/categories/'}>

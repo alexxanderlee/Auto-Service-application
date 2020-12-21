@@ -1,6 +1,7 @@
 const initialState = {
     loggedIn: false,
-    currentUser: {}
+    currentUser: {},
+    orders: []
 };
 
 const user = (state = initialState, action) => {
@@ -16,9 +17,18 @@ const user = (state = initialState, action) => {
             localStorage.removeItem("token");
             return {
                 ...state,
+                loggedIn: false,
                 currentUser: {},
-                loggedIn: false
+                orders: []
             }
+
+        case 'GET_ORDERS': {
+            console.log(action.payload);
+            return {
+                ...state,
+                orders: action.payload
+            }
+        }
 
         default:
             return state;

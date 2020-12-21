@@ -1,9 +1,19 @@
 export const fetchProducts = () => (dispatch) => {
-    fetch('http://localhost:3000/db.json')
-        .then((respose) => respose.json())
-        .then(result => {
-            dispatch(setProducts(result.products));
-        });
+    fetch('http://localhost:8090/spares')
+        .then(response => {
+            if (!response.ok) {
+                return Promise.reject(new Error(response.statusText));
+            }
+            return Promise.resolve(response.json());
+        })
+        .then(
+            (result) => {
+                dispatch(setProducts(result));
+            },
+            (error) => {
+                console.log(error);
+            }
+        )
 };
 
 export const setProducts = (items) => ({

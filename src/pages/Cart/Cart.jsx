@@ -4,13 +4,15 @@ import { useSelector } from 'react-redux';
 import './Cart.sass';
 
 import { Button } from '../../components';
-import { removeProductFromCart, decreaseProduct, increaseProduct } from '../../redux/actions/cart';
+import { history } from '../../helpers';
+import { fetchCheckout, removeProductFromCart, decreaseProduct, increaseProduct } from '../../redux/actions/cart';
 import { emptyCart } from '../../assets/images';
 
 function Cart({ dispatch }) {
-    const items = useSelector((state) => state.cart.items);
-    const totalCount = useSelector((state) => state.cart.totalCount);
-    const totalPrice = useSelector((state) => state.cart.totalPrice);
+    const state = useSelector((state) => state);
+    const items = state.cart.items;
+    const totalCount = state.cart.totalCount;
+    const totalPrice = state.cart.totalPrice;
 
     if (totalCount > 0) {
         const handleRemoveProduct = (id) => {
@@ -25,6 +27,28 @@ function Cart({ dispatch }) {
     
         const handleIncreaseProduct = (id) => {
             dispatch(increaseProduct(id));
+        };
+
+        const handleCheckoutBtn = () => {
+            if (!state.user.loggedIn) {
+                if (window.confirm('Вы не авторизованы! Войти?')) {
+                    history.push('/login');
+                }
+            } else {
+                if (window.confirm('Вы действительно хотите оформить заказ?')) {
+                    const userId = state.user.currentUser.id;
+                    const array = Object.values(items).reduce((acc, item) => {
+                        acc.push({
+                            spareId: item.obj.id,
+                            clientId: userId,
+                            quantity: item.count,
+                            amount: item.fullPrice
+                        });
+                        return acc;
+                    }, []);
+                    dispatch(fetchCheckout(array));
+                }
+            }
         };
         
         return (
@@ -74,7 +98,7 @@ function Cart({ dispatch }) {
                             </div>
                         </div>
                         <div className="cart_btn_div">
-                            <Button>Офоримть заказ</Button>
+                            <Button onClickAction={handleCheckoutBtn}>Офоримть заказ</Button>
                         </div>
                     </div>
                 </div>

@@ -1,19 +1,21 @@
 import { useSelector } from "react-redux";
-import { Redirect } from 'react-router-dom';
+import { useEffect } from 'react';
 
 import './Profile.sass';
 
 import { Button } from '../../components';
 import { profilePng } from '../../assets/images';
-import { logoutUser } from '../../redux/actions/user';
+import { logoutUser, fetchRemoveOrder, fetchGetOrders } from '../../redux/actions/user';
 
 function Profile({ dispatch }) {
     const state = useSelector(state => state);
-
-    if (!state.user.loggedIn) {
-        return <Redirect to="/login" />
-    }
     const { name, surname, email, phone } = state.user.currentUser;
+    const orders = state.user.orders;
+    const products = state.products.items;
+
+    useEffect(() => {
+        dispatch(fetchGetOrders());
+    }, []);
 
     const handleLogOut = () => {
         if (window.confirm('Вы действительно хотите выйти?')) {
@@ -40,6 +42,36 @@ function Profile({ dispatch }) {
                             </div>
                         </div>
                         <Button onClickAction={handleLogOut}>Выйти</Button>
+                        <div className="profile_orders">
+                            <div className="profile_orders-title">Текущие заказы</div>
+                            {(orders.length > 0)
+                                ? products.length > 0 && orders.map(({ id, spareId, quantity, amount }) => {
+                                    const { img: productImg, name: productName, price: productPrice } = products.find(product => Number(product.id) === Number(spareId));
+
+                                    const handleRemoveOrder = () => {
+                                        if (window.confirm('Вы действительно хотите отменить заказ?')) {
+                                            dispatch(fetchRemoveOrder(id));
+                                        }
+                                    };
+
+                                    return (
+                                        <div className="profile_order" key={id}>
+                                            <img src={process.env.PUBLIC_URL + productImg} alt="pic" className="profile_order-img" />
+                                            <div className="profile_order-data">
+                                                <div className="profile_order-data-block1">
+                                                    <div className="profile_order-name">{productName}</div>
+                                                    <div className="profile_order-remove" onClick={() => handleRemoveOrder()}></div>
+                                                </div>
+                                                <div className="profile_order-data-block2">
+                                                    <div className="profile_order-amount">{quantity} шт. x {productPrice} р.</div>
+                                                    <div className="profile_order-fullprice">{amount} р.</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    );
+                                })
+                                : <div>Заказы отсутствуют</div> }               
+                        </div>
                     </div>
                 </div>
             </div>
