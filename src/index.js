@@ -7,7 +7,7 @@ import store from './redux/store.js';
 import App from './App';
 import { ScrollToTop } from './components';
 import { history } from './helpers';
-import { fetchGetProfile, fetchGetOrders } from './redux/actions/user';
+import { fetchGetProfile } from './redux/actions/user';
 
 store.dispatch(fetchGetProfile());
 
